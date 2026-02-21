@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="600" height="340">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e1a"/>
+      <stop offset="100%" style="stop-color:#12103a"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1f35"/>
+      <stop offset="100%" style="stop-color:#0f1228"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <radialGradient id="orb1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="340" fill="url(#bg)"/>
+
+  <!-- Ambient glow orbs -->
+  <ellipse cx="500" cy="60" rx="120" ry="100" fill="url(#orb1)"/>
+  <ellipse cx="80" cy="280" rx="100" ry="80" fill="url(#orb2)"/>
+
+  <!-- Grid dots -->
+  <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r="0.8" fill="rgba(255,255,255,0.07)"/>
+  </pattern>
+  <rect width="600" height="340" fill="url(#dots)"/>
+
+  <!-- Top accent bar with gradient -->
+  <rect x="0" y="0" width="600" height="3" fill="url(#accent)"/>
+
+  <!-- Main card -->
+  <rect x="24" y="24" width="552" height="292" rx="18" fill="url(#card)" opacity="0.85" stroke="rgba(99,102,241,0.35)" stroke-width="1"/>
+
+  <!-- Decorative corner accent -->
+  <path d="M24 42 L24 24 L42 24" stroke="rgba(99,102,241,0.7)" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M534 24 L576 24 L576 42" stroke="rgba(168,85,247,0.7)" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Badge row -->
+  <rect x="46" y="48" width="96" height="22" rx="11" fill="rgba(99,102,241,0.2)" stroke="rgba(99,102,241,0.55)" stroke-width="1"/>
+  <text x="94" y="63" text-anchor="middle" font-family="monospace" font-size="9" font-weight="bold" fill="#818cf8">AI-POWERED</text>
+
+  <rect x="152" y="48" width="74" height="22" rx="11" fill="rgba(16,185,129,0.18)" stroke="rgba(16,185,129,0.5)" stroke-width="1"/>
+  <circle cx="165" cy="59" r="3" fill="#34d399"/>
+  <text x="190" y="63" text-anchor="middle" font-family="monospace" font-size="9" font-weight="bold" fill="#6ee7b7">LIVE</text>
+
+  <rect x="236" y="48" width="94" height="22" rx="11" fill="rgba(168,85,247,0.15)" stroke="rgba(168,85,247,0.4)" stroke-width="1"/>
+  <text x="283" y="63" text-anchor="middle" font-family="monospace" font-size="9" fill="#d8b4fe">TIET · Campus</text>
+
+  <!-- Title -->
+  <text x="46" y="106" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#f1f5f9" filter="url(#glow)">Lost &amp; Found Portal</text>
+  <text x="46" y="128" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">OpenAI CLIP · Multi-Signal AI Match · JWT Auth · Live Maps</text>
+
+  <!-- Divider -->
+  <rect x="46" y="144" width="508" height="1" fill="rgba(99,102,241,0.25)"/>
+
+  <!-- Stat cards - row 1 -->
+  <rect x="46" y="156" width="114" height="58" rx="12" fill="rgba(99,102,241,0.13)" stroke="rgba(99,102,241,0.28)" stroke-width="1"/>
+  <text x="103" y="179" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#a5b4fc">CLIP</text>
+  <text x="103" y="196" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">ViT-B/32 Vision AI</text>
+  <text x="103" y="207" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#6366f1">OpenAI Model</text>
+
+  <rect x="170" y="156" width="114" height="58" rx="12" fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.28)" stroke-width="1"/>
+  <text x="227" y="179" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#6ee7b7">4-SIG</text>
+  <text x="227" y="196" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">Match Engine</text>
+  <text x="227" y="207" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#10b981">Img+Text+GPS+Time</text>
+
+  <rect x="294" y="156" width="114" height="58" rx="12" fill="rgba(245,158,11,0.12)" stroke="rgba(245,158,11,0.28)" stroke-width="1"/>
+  <text x="351" y="179" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#fcd34d">JWT</text>
+  <text x="351" y="196" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">Secure Auth</text>
+  <text x="351" y="207" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f59e0b">Admin Dashboard</text>
+
+  <rect x="418" y="156" width="114" height="58" rx="12" fill="rgba(239,68,68,0.1)" stroke="rgba(239,68,68,0.25)" stroke-width="1"/>
+  <text x="475" y="179" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#fca5a5">Maps</text>
+  <text x="475" y="196" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">Interactive GPS</text>
+  <text x="475" y="207" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#ef4444">Leaflet + Location</text>
+
+  <!-- Tech pills row -->
+  <rect x="46" y="228" width="62" height="20" rx="10" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+  <text x="77" y="242" text-anchor="middle" font-family="monospace" font-size="9" fill="#94a3b8">FastAPI</text>
+
+  <rect x="116" y="228" width="64" height="20" rx="10" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+  <text x="148" y="242" text-anchor="middle" font-family="monospace" font-size="9" fill="#94a3b8">React 19</text>
+
+  <rect x="188" y="228" width="64" height="20" rx="10" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+  <text x="220" y="242" text-anchor="middle" font-family="monospace" font-size="9" fill="#94a3b8">PyTorch</text>
+
+  <rect x="260" y="228" width="70" height="20" rx="10" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+  <text x="295" y="242" text-anchor="middle" font-family="monospace" font-size="9" fill="#94a3b8">Tailwind 4</text>
+
+  <rect x="338" y="228" width="68" height="20" rx="10" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+  <text x="372" y="242" text-anchor="middle" font-family="monospace" font-size="9" fill="#94a3b8">SQLModel</text>
+
+  <rect x="414" y="228" width="72" height="20" rx="10" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+  <text x="450" y="242" text-anchor="middle" font-family="monospace" font-size="9" fill="#94a3b8">PostgreSQL</text>
+
+  <!-- Bottom row: URL + status -->
+  <circle cx="58" cy="284" r="4" fill="url(#green)"/>
+  <text x="68" y="288" font-family="monospace" font-size="10" fill="#34d399">lostnfound-thapar.vercel.app</text>
+  <text x="380" y="288" font-family="monospace" font-size="10" fill="rgba(168,85,247,0.75)">· Full-Stack · AI/ML · Open Source</text>
+</svg>
