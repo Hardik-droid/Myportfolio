@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { IoCopyOutline } from "react-icons/io5";
 
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 
 import { cn } from "@/lib/utils";
 import { useTilt } from "@/hooks/useTilt";
@@ -57,14 +57,6 @@ export const BentoGridItem = ({
 
   const [copied, setCopied] = useState(false);
 
-  const defaultOptions = {
-    loop: copied,
-    autoplay: copied,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
 
   const handleCopy = () => {
     const text = "ophardik001@gmail.com";
@@ -187,7 +179,7 @@ export const BentoGridItem = ({
                   }`}
               >
                 {/* <img src="/confetti.gif" alt="confetti" /> */}
-                <Lottie options={defaultOptions} height={200} width={400} />
+                <Lottie animationData={animationData} loop={copied} autoplay={copied} style={{ height: 200, width: 400 }} />
               </div>
 
               <MagicButton
