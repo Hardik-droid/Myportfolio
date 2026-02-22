@@ -112,7 +112,7 @@ const TiltCard = ({ item }: { item: (typeof currentProjects)[0] }) => {
 
 const CurrentProjects = () => {
   return (
-    <div className="py-20">
+    <div id="projects" className="py-20">
       <h1 className="heading">
         Currently <span className="text-purple">Working On</span>
       </h1>
