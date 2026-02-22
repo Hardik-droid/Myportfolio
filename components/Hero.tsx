@@ -53,10 +53,10 @@ const Hero = () => {
            */}
           <TextGenerateEffect
             words="Building Scalable Backends & Innovative Tech Solutions"
-            className="text-center text-[40px] md:text-5xl lg:text-6xl"
+            className="text-center text-2xl sm:text-3xl md:text-5xl lg:text-6xl"
           />
 
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
+          <p className="text-center md:tracking-wider mb-4 text-sm md:text-base lg:text-lg">
             Hi! I&apos;m Hardik, a 1st-year student at Thapar University, Patiala and a backend-focused engineer from India specializing in production systems, technical SEO infrastructure, and API-driven architectures. Currently a Backend Developer at GZoneSphere and interning with a Canadian company — also an award-winning hardware innovator at the BML Hackathon, Ludhiana.
           </p>
 
