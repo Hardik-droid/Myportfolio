@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 
 import "./globals.css";
 import { ThemeProvider } from "./provider";
+import MusicPlayer from "@/components/MusicPlayer";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <MusicPlayer />
         </ThemeProvider>
       </body>
     </html>
