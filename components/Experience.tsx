@@ -1,71 +1,29 @@
-import React, { useRef } from "react";
-import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
 
 import { workExperience } from "@/data";
 import { Button } from "./ui/MovingBorders";
+import { useTilt } from "@/hooks/useTilt";
 
 const TiltCard = ({ card }: { card: (typeof workExperience)[0] }) => {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [12, -12]), {
-    stiffness: 200,
-    damping: 20,
-  });
-  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-12, 12]), {
-    stiffness: 200,
-    damping: 20,
-  });
-  const scale = useSpring(1, { stiffness: 200, damping: 20 });
-  const glowX = useTransform(x, [-0.5, 0.5], ["0%", "100%"]);
-  const glowY = useTransform(y, [-0.5, 0.5], ["0%", "100%"]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = ref.current?.getBoundingClientRect();
-    if (!rect) return;
-    x.set((e.clientX - rect.left) / rect.width - 0.5);
-    y.set((e.clientY - rect.top) / rect.height - 0.5);
-  };
-
-  const handleMouseEnter = () => scale.set(1.04);
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-    scale.set(1);
-  };
+  const { ref, motionStyle, glowBg, handlers } = useTilt();
 
   return (
     <motion.div
       ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        rotateX,
-        rotateY,
-        scale,
-        transformStyle: "preserve-3d",
-        perspective: 800,
-      }}
+      {...handlers}
+      style={{ ...motionStyle, perspective: 800 }}
       className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2 w-full h-full rounded-[calc(1.75rem*0.96)] relative overflow-hidden cursor-pointer"
     >
-      {/* Dynamic specular highlight that follows cursor */}
+      {/* Specular glow follows cursor */}
       <motion.div
         className="absolute inset-0 rounded-[calc(1.75rem*0.96)] pointer-events-none"
-        style={{
-          background: useMotionValue("") as any,
-          backgroundImage: useTransform(
-            [glowX, glowY],
-            ([gx, gy]) =>
-              `radial-gradient(circle at ${gx} ${gy}, rgba(203,172,249,0.18) 0%, transparent 60%)`
-          ) as any,
-        }}
+        style={{ backgroundImage: glowBg }}
       />
 
       {/* Content lifted in Z */}
-      <motion.img
+      <img
         src={card.thumbnail}
         alt={card.thumbnail}
         className="lg:w-32 md:w-20 w-16 relative"

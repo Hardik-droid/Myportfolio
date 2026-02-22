@@ -8,14 +8,16 @@ export function useTilt() {
   const y = useMotionValue(0);
 
   const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [10, -10]), {
-    stiffness: 200,
-    damping: 20,
+    stiffness: 600,
+    damping: 40,
+    mass: 0.5,
   });
   const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-10, 10]), {
-    stiffness: 200,
-    damping: 20,
+    stiffness: 600,
+    damping: 40,
+    mass: 0.5,
   });
-  const scale = useSpring(1, { stiffness: 200, damping: 20 });
+  const scale = useSpring(1, { stiffness: 600, damping: 40, mass: 0.5 });
   const glowX = useTransform(x, [-0.5, 0.5], ["0%", "100%"]);
   const glowY = useTransform(y, [-0.5, 0.5], ["0%", "100%"]);
   const glowBg = useTransform(

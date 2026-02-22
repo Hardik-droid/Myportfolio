@@ -135,7 +135,7 @@ export const testimonials = [
   {
     quote:
       "The Mag Charger project Hardik led was a highlight of our innovation competition. His ability to blend hardware and software thinking to solve a real EV infrastructure problem showed maturity beyond his years.",
-    name: "BCM College",
+    name: "BML Hackathon Judges",
     title: "Innovation Competition — Ludhiana",
   },
 ];
@@ -184,7 +184,7 @@ export const workExperience = [
   },
   {
     id: 3,
-    title: "Hardware Innovator – BML Hackathon Winner, BCM College",
+    title: "Hardware Innovator – BML Hackathon Winner, BML Hackathon,",
     desc: "12th Grade: Built award-winning hardware projects — Mag Charger (MagSafe-inspired wireless EV charging), Speed Guard Pro (ultrasonic speed detection), and BCM Autonomous Robot Car. Won 1st place at BML Hackathon, Ludhiana.",
     className: "md:col-span-2",
     thumbnail: "/exp3.svg",

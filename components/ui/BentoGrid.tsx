@@ -1,16 +1,18 @@
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { IoCopyOutline } from "react-icons/io5";
-
-import Lottie from "lottie-react";
 
 import { cn } from "@/lib/utils";
 import { useTilt } from "@/hooks/useTilt";
 
 import { BackgroundGradientAnimation } from "./GradientBg";
-import GridGlobe from "./GridGlobe";
-import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
+
+// Heavy 3D/animation libs — load only when their card is needed
+const GridGlobe = dynamic(() => import("./GridGlobe"), { ssr: false });
+const Lottie    = dynamic(() => import("lottie-react"), { ssr: false });
+import animationData from "@/data/confetti.json";
 
 export const BentoGrid = ({
   className,
@@ -67,12 +69,12 @@ export const BentoGridItem = ({
   const { ref, motionStyle, glowBg, handlers } = useTilt();
 
   return (
+    <div style={{ perspective: "800px" }} className={cn("row-span-1", className)}>
     <motion.div
       ref={ref}
       {...handlers}
       className={cn(
-        "row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
-        className
+        "relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl shadow-input dark:shadow-none justify-between flex flex-col space-y-4 w-full h-full"
       )}
       style={{
         ...motionStyle,
@@ -193,5 +195,6 @@ export const BentoGridItem = ({
         </div>
       </div>
     </motion.div>
+    </div>
   );
 };

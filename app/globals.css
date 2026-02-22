@@ -70,11 +70,23 @@
   * {
     @apply border-border !scroll-smooth;
   }
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+  }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
   }
   button {
     @apply active:outline-none;
+  }
+  /* Promote animated elements to their own GPU layer */
+  [class*="animate-"],
+  [style*="transform"] {
+    will-change: transform;
+    backface-visibility: hidden;
   }
 }
 

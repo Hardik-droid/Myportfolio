@@ -1,16 +1,17 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { navItems } from "@/data";
-
 import Hero from "@/components/Hero";
-import Grid from "@/components/Grid";
-import Footer from "@/components/Footer";
-import Clients from "@/components/Clients";
-import Approach from "@/components/Approach";
-import Experience from "@/components/Experience";
-import RecentProjects from "@/components/RecentProjects";
-import CurrentProjects from "@/components/CurrentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
+
+const Grid           = dynamic(() => import("@/components/Grid"));
+const CurrentProjects = dynamic(() => import("@/components/CurrentProjects"));
+const RecentProjects  = dynamic(() => import("@/components/RecentProjects"));
+const Clients         = dynamic(() => import("@/components/Clients"));
+const Experience      = dynamic(() => import("@/components/Experience"));
+const Approach        = dynamic(() => import("@/components/Approach"));
+const Footer          = dynamic(() => import("@/components/Footer"));
 
 const Home = () => {
   return (
